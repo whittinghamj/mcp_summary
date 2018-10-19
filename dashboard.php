@@ -285,7 +285,7 @@ desired effect
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
-										<h3 class="box-title">Customer Miners</h3>
+										<h3 class="box-title">Miners</h3>
 									</div>
 									<div class="box-body text-center">
 										<h1>
@@ -309,7 +309,7 @@ desired effect
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
-										<h3 class="box-title">Projected Monthly Cost</h3>
+										<h3 class="box-title">Monthly Cost</h3>
 									</div>
 									<div class="box-body text-center">
 										<h1>
@@ -321,7 +321,7 @@ desired effect
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
-										<h3 class="box-title">Projected Monthly Profit</h3>
+										<h3 class="box-title">Monthly Profit</h3>
 									</div>
 									<div class="box-body text-center">
 										<h1>
