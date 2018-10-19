@@ -281,8 +281,8 @@ desired effect
     
 				<section class="content">
 					<div class="row">
-						<div class="col-md-12">
-							<div class="col-md-3">
+						<div class="col-md-12 col-xs-12">
+							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
 										<h3 class="box-title">Customer Miners</h3>
@@ -294,7 +294,7 @@ desired effect
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
 										<h3 class="box-title">Hashrate</h3>
@@ -306,7 +306,7 @@ desired effect
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
 										<h3 class="box-title">Projected Monthly Cost</h3>
@@ -318,7 +318,7 @@ desired effect
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
 										<h3 class="box-title">Projected Monthly Profit</h3>
