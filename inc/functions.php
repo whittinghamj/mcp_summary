@@ -172,6 +172,13 @@ function c_to_f($temp)
     return $fahrenheit ;
 }
 
+function f_to_c($temp)
+{
+    // $fahrenheit=$temp*9/5+32;
+    $cen = ($temp - 32) / 1.8;
+    return $cen ;
+}
+
 function getcontents($href)
 {
 	$curl = curl_init();
