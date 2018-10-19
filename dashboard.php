@@ -271,6 +271,9 @@ desired effect
         	<?php
         		$total_miners 				= count($site['miners']);
         		// $total_power = $site['power'];
+        		$total_watts				= number_format($site['power']['watts'], 2);
+        		$total_kilowatts			= number_format($site['power']['kilowatts'], 2);
+        		$total_amps					= number_format($site['power']['amps'], 2);
         	?>
 
             <div class="content-wrapper">
@@ -286,14 +289,15 @@ desired effect
                 </section>
     
 				<section class="content">
-					<?php print_r($site['power']); ?>
+					<?php print_r($site['miners']); ?>
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Miners:</strong> <span id="total_miners">
+	                                    	<strong>Miners:</strong> 
+	                                    	<span id="total_miners">
 	                                    		<?php echo count($total_miners); ?>
 	                                    	</span>
 	                                    </h3>
@@ -304,7 +308,8 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Hashrate:</strong> <span id="total_hashrate">
+	                                    	<strong>Hashrate:</strong> 
+	                                    	<span id="total_hashrate">
 	                                    		<?php echo number_format($total_hashrate, 2); ?> THs
 	                                    	</span>
 	                                    </h3>
@@ -312,28 +317,32 @@ desired effect
 	                            </div>
 							</div>
 							<div class="col-md-3 col-xs-6">
-								<div class="box box-primary box-solid">
-									<div class="box-header with-border">
-										<h3 class="box-title">Power Watts</h3>
-									</div>
-									<div class="box-body text-center">
-										<h1>
-											~<?php echo number_format($total_cost, 2); ?>
-										</h1>
-									</div>
-								</div>
+								<div class="box box-primary">
+	                                <div class="box-body">
+	                                    <h3>
+	                                    	<strong>Power:</strong> 
+	                                    	<span id="total_kilowatts">
+	                                    		<?php echo $total_kilowatts; ?> KWs
+	                                    	</span>
+	                                    	 / 
+	                                    	<span id="total_amps">
+	                                    		<?php echo $total_amps; ?> AMPs
+	                                    	</span>
+	                                    </h3>
+	                                </div>
+	                            </div>
 							</div>
 							<div class="col-md-3 col-xs-6">
-								<div class="box box-primary box-solid">
-									<div class="box-header with-border">
-										<h3 class="box-title">Power AMPs</h3>
-									</div>
-									<div class="box-body text-center">
-										<h1>
-											~<?php echo number_format($total_profit, 2); ?>
-										</h1>
-									</div>
-								</div>
+								<div class="box box-primary">
+	                                <div class="box-body">
+	                                    <h3>
+	                                    	<strong>Power:</strong> 
+	                                    	<span id="total_amps">
+	                                    		<?php echo $total_amps; ?> AMPs
+	                                    	</span>
+	                                    </h3>
+	                                </div>
+	                            </div>
 							</div>
 						</div>
 					</div>
