@@ -339,7 +339,7 @@ desired effect
 	                                </div>
 	                            </div>
 							</div>
-							<div class="col-md-1 col-xs-6">
+							<div class="col-md-2 col-xs-6">
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
