@@ -380,7 +380,7 @@ desired effect
 																	<td width="35px" align="center" valign="middle">
 																		<span class="miner_heatmap miner_customer_id_'.$position['miner_customer']['id'].'">
 																			<ul id="test2" style="display: table; width: 100%;">
-																				<li id="'.$position['miner_id'].'"style="width: 100%; list-style-type: none; display:inline-block;" data-hist="'.$position['miner_temp'].'">
+																				<li id="'.$position['miner_id'].'" style="width: 100%; list-style-type: none; display:inline-block;" data-hist="'.$position['miner_temp'].'">
 																					<span data-html="true" data-toggle="tooltip" data-placement="top" title="<strong>Name:</strong> '.$position['miner_name'].'  <br> <strong>IP:</strong> '.$position['miner_ip'].'  <br> <strong>Hardware:</strong> '.$position['miner_hardware'].'<br> <strong>Hashrate:</strong> '.$position['miner_hashrate'].' <br> <strong>Customer:</strong> '.$position['miner_customer']['fullname'].'">
 																					<u>'.$position['miner_location'].'</u>
 																					</span>
@@ -553,29 +553,40 @@ desired effect
 		    	<div class="form-group">
 	                <label class="control-sidebar-subheading">
 	                    Miners
-	                    <span id="total_miners" class="pull-right"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
 	                </label>
+	                <p>
+	                    <span id="total_miners" class="pull-left"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
+	                </p>
 	            </div>
 
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
 	                    Hashrate
-	                    <span id="total_hashrate" class="pull-right"><?php echo number_format($total_hashrate, 2); ?> THs</span>
 	                </label>
+	                <p>
+	                	<span id="total_hashrate" class="pull-left"><?php echo number_format($total_hashrate, 2); ?> THs</span>
+	                </p>
 	            </div>
 
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
-	                    Power
-	                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs</span> / <span id="total_amps"><?php echo $total_amps; ?> AMPs</span>
+	                    Est Power
 	                </label>
+	                <p>
+	                	<span id="avg_power" class="pull-left">
+	                		<?php echo $total_kilowatts; ?> kWs <br>
+	                		<?php echo $total_amps; ?> AMPs
+	                	</span>
+	                </p>
 	            </div>
 
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
-	                    Temp
-	                    <span id="avg_temp" class="pull-right"><?php echo $avg_temp.'°F'; ?></span>
+	                    Avg Temp:
 	                </label>
+	                <p>
+	                	<span id="avg_temp" class="pull-left"><?php echo $avg_temp.'°F'; ?></span>
+	                </p>
 	            </div>
 		    </div>
 		</div>
