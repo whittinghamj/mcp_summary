@@ -549,28 +549,34 @@ desired effect
 		        </form>
 		    	
 		    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
-		    	<div class="col-md-12 col-xs-12">
-                	<strong>Miners:</strong> <br>
-                	<span id="total_miners"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
-				</div>
-				<br>
+		    	
+		    	<div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Miners
+	                    <span id="total_miners" class="pull-right"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
+	                </label>
+	            </div>
 
-				<div class="col-md-1 col-xs-6">
-                	<strong>Hashrate:</strong> <br>
-                	<span id="total_hashrate"><?php echo number_format($total_hashrate, 2); ?> THs</span>
-				</div>
-				<br>
+	            <div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Hashrate
+	                    <span id="total_hashrate" class="pull-right"><?php echo number_format($total_hashrate, 2); ?> THs</span>
+	                </label>
+	            </div>
 
-				<div class="col-md-2 col-xs-6">
-					<strong>Avg Power:</strong> <br>
-                	<span id="total_kilowatts"><?php echo $total_kilowatts; ?> kWs</span> / <span id="total_amps"><?php echo $total_amps; ?> AMPs</span>
-				</div>
-				<br>
+	            <div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Avg Power
+	                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs</span> / <span id="total_amps"><?php echo $total_amps; ?> AMPs</span>
+	                </label>
+	            </div>
 
-				<div class="col-md-2 col-xs-6">
-					<strong>Avg Temp:</strong> <br>
-                	<span id="total_amps"><?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?></span>
-				</div>
+	            <div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Avg Temp
+	                    <span id="avg_temp" class="pull-right"><?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?></span>
+	                </label>
+	            </div>
 		    </div>
 		</div>
       </aside>
