@@ -58,6 +58,14 @@ $now = time();
 
 $passcode 						= post('passcode');
 
+// reject login if passcode is empty
+if(empty($passcode))
+{
+	status_message('danger', 'Passcode cannot be empty.');
+	go($site['url'].'/index');
+}
+
+
 $query = "SELECT `id` FROM `sites` WHERE `summary_passcode` = '".$passcode."' ";
 $result = mysql_query($query) or die(mysql_error());
 $found = mysql_num_rows($result);
