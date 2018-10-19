@@ -1718,17 +1718,11 @@ desired effect
 		        </form>
 		    	-->
 		    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
-		    	<div class="col-md-1 col-xs-6">
-					<div class="box box-primary">
-                        <div class="box-body">
-                            <h3>
-                            	<strong>Miners:</strong> <br>
-                            	<span id="total_miners">
-                            		<?php echo $total_online_miners.' / '.$total_miners; ?>
-                            	</span>
-                            </h3>
-                        </div>
-                    </div>
+		    	<div class="col-md-12 col-xs-12">
+                	<strong>Miners:</strong> <br>
+                	<span id="total_miners">
+                		<?php echo $total_online_miners.' / '.$total_miners; ?>
+                	</span>
 				</div>
 				<div class="col-md-1 col-xs-6">
 					<div class="box box-primary">
