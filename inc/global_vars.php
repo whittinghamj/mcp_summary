@@ -3,7 +3,7 @@
 // site vars
 $site['url']					= 'https://summary.miningcontrolpanel.com';
 $config['url']					= $site['url'];
-$site['title']					= 'MiningControlPanel';
+$site['title']					= 'MCP - Summary';
 $config['title']				= $site['title'];
 
 $site['copyright']				= 'Written by Jamie Whittingham.';
