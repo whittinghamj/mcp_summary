@@ -327,7 +327,7 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Power:</strong> <br>
+	                                    	<strong>Avg Power:</strong> <br>
 	                                    	<span id="total_kilowatts">
 	                                    		<?php echo $total_kilowatts; ?> kWs
 	                                    	</span>
@@ -343,7 +343,7 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Temp:</strong> <br>
+	                                    	<strong>Avg Temp:</strong> <br>
 	                                    	<span id="total_amps">
 	                                    		<?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?>
 	                                    	</span>
