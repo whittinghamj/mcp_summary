@@ -345,7 +345,7 @@ desired effect
 	                                    <h3>
 	                                    	<strong>Temp:</strong> <br>
 	                                    	<span id="total_amps">
-	                                    		<?php echo f_to_c($avg_temp).'C / '$avg_temp.'F'; ?>
+	                                    		<?php echo f_to_c($avg_temp).'C / '.$avg_temp.'F'; ?>
 	                                    	</span>
 	                                    </h3>
 	                                </div>
