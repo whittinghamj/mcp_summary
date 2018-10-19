@@ -508,72 +508,49 @@ desired effect
         </ul>
         
         <!-- Tab panes -->
-		<div class="tab-content">		        
-		        <form method="post">
-		            <h3 class="control-sidebar-heading">Settings</h3>
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Report panel usage
-		                    <input type="checkbox" class="pull-right" checked>
-		                </label>
-		                <p>
-		                    Some information about this general settings option
-		                </p>
-		            </div>
+		<div class="tab-content">
+	    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
+	    	<form method="post">
+		    	<div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Miners:
+	                    <span id="total_miners" class="pull-right"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
+	                </label>
+	                <p>
+	                    Number of online vs total miners for this site.
+	                </p>
+	            </div>
 
-		            <h3 class="control-sidebar-heading">Chat Settings</h3>
+	            <div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Hashrate:
+	                    <span id="total_hashrate" class="pull-right"><?php echo number_format($total_hashrate, 2); ?> THs</span>
+	                </label>
+	                <p>
+	                    Estimated hashrate for all miners in this site.
+	                </p>
+	            </div>
 
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Show me as online
-		                    <input type="checkbox" class="pull-right" checked>
-		                </label>
-		            </div>
-		        </form>
-		    	
-		    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
-		    	<form method="post">
-			    	<div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Miners:
-		                    <span id="total_miners" class="pull-right"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
-		                </label>
-		                <p>
-		                    Number of online vs total miners for this site.
-		                </p>
-		            </div>
+	            <div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Power:
+	                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs / <?php echo $total_amps; ?> AMPs</span>
+	                </label>
+	                <p>
+	                    Estimated power consumption based upon stock settings for each miner in this site.
+	                </p>
+	            </div>
 
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Hashrate:
-		                    <span id="total_hashrate" class="pull-right"><?php echo number_format($total_hashrate, 2); ?> THs</span>
-		                </label>
-		                <p>
-		                    Estimated hashrate for all miners in this site.
-		                </p>
-		            </div>
-
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Power:
-		                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs / <?php echo $total_amps; ?> AMPs</span>
-		                </label>
-		                <p>
-		                    Estimated power consumption based upon stock settings for each miner in this site.
-		                </p>
-		            </div>
-
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Temp:
-		                    <span id="avg_temp" class="pull-right"><?php echo $avg_temp.'°F'; ?></span>
-		                </label>
-		                <p>
-		                    Average temperature across all online miners in this site.
-		                </p>
-		            </div>
-		        </form>
-		    </div>
+	            <div class="form-group">
+	                <label class="control-sidebar-subheading">
+	                    Temp:
+	                    <span id="avg_temp" class="pull-right"><?php echo $avg_temp.'°F'; ?></span>
+	                </label>
+	                <p>
+	                    Average temperature across all online miners in this site.
+	                </p>
+	            </div>
+	        </form>
 		</div>
       </aside>
 
