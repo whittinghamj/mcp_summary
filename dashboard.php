@@ -489,9 +489,7 @@ desired effect
         </ul>
         
         <!-- Tab panes -->
-		<div class="tab-content">
-		    <div class="tab-pane active" id="control-sidebar-settings-tab">
-		        
+		<div class="tab-content">		        
 		        <form method="post">
 		            <h3 class="control-sidebar-heading">Settings</h3>
 		            <div class="form-group">
@@ -504,26 +502,6 @@ desired effect
 		                </p>
 		            </div>
 
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Allow mail redirect
-		                    <input type="checkbox" class="pull-right" checked>
-		                </label>
-		                <p>
-		                    Other sets of options are available
-		                </p>
-		            </div>
-
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Expose author name in posts
-		                    <input type="checkbox" class="pull-right" checked>
-		                </label>
-		                <p>
-		                    Allow the user to show his name in blog posts
-		                </p>
-		            </div>
-
 		            <h3 class="control-sidebar-heading">Chat Settings</h3>
 
 		            <div class="form-group">
@@ -532,62 +510,49 @@ desired effect
 		                    <input type="checkbox" class="pull-right" checked>
 		                </label>
 		            </div>
-
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Turn off notifications
-		                    <input type="checkbox" class="pull-right">
-		                </label>
-		            </div>
-
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Delete chat history
-		                    <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-		                </label>
-		            </div>
 		        </form>
 		    	
 		    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
-		    	
-		    	<div class="form-group">
-	                <label class="control-sidebar-subheading">
-	                    Miners
-	                </label>
-	                <p>
-	                    <span id="total_miners" class="pull-left"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
-	                </p>
-	            </div>
+		    	<form method="post">
+			    	<div class="form-group">
+		                <label class="control-sidebar-subheading">
+		                    Miners
+		                </label>
+		                <p>
+		                    <span id="total_miners" class="pull-left"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
+		                </p>
+		            </div>
 
-	            <div class="form-group">
-	                <label class="control-sidebar-subheading">
-	                    Hashrate
-	                </label>
-	                <p>
-	                	<span id="total_hashrate" class="pull-left"><?php echo number_format($total_hashrate, 2); ?> THs</span>
-	                </p>
-	            </div>
+		            <div class="form-group">
+		                <label class="control-sidebar-subheading">
+		                    Hashrate
+		                </label>
+		                <p>
+		                	<span id="total_hashrate" class="pull-left"><?php echo number_format($total_hashrate, 2); ?> THs</span>
+		                </p>
+		            </div>
 
-	            <div class="form-group">
-	                <label class="control-sidebar-subheading">
-	                    Est Power
-	                </label>
-	                <p>
-	                	<span id="avg_power" class="pull-left">
-	                		<?php echo $total_kilowatts; ?> kWs <br>
-	                		<?php echo $total_amps; ?> AMPs
-	                	</span>
-	                </p>
-	            </div>
+		            <div class="form-group">
+		                <label class="control-sidebar-subheading">
+		                    Est Power
+		                </label>
+		                <p>
+		                	<span id="avg_power" class="pull-left">
+		                		<?php echo $total_kilowatts; ?> kWs <br>
+		                		<?php echo $total_amps; ?> AMPs
+		                	</span>
+		                </p>
+		            </div>
 
-	            <div class="form-group">
-	                <label class="control-sidebar-subheading">
-	                    Avg Temp:
-	                </label>
-	                <p>
-	                	<span id="avg_temp" class="pull-left"><?php echo $avg_temp.'°F'; ?></span>
-	                </p>
-	            </div>
+		            <div class="form-group">
+		                <label class="control-sidebar-subheading">
+		                    Avg Temp:
+		                </label>
+		                <p>
+		                	<span id="avg_temp" class="pull-left"><?php echo $avg_temp.'°F'; ?></span>
+		                </p>
+		            </div>
+		        </form>
 		    </div>
 		</div>
       </aside>
