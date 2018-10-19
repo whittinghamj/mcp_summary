@@ -285,6 +285,10 @@ desired effect
         <div class="content-wrapper">
 			
             <div id="status_message"></div>
+                        	
+            <section class="content-header">
+                <h1><?php echo $site['name']; ?></h1>
+            </section>
 
 			<section class="content">
 
