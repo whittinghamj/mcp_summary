@@ -70,13 +70,19 @@ $query = "SELECT `id` FROM `sites` WHERE `summary_passcode` = '".$passcode."' ";
 $result = mysql_query($query) or die(mysql_error());
 $found = mysql_num_rows($result);
 if($found > 0){
-	$_SESSION['account']['id']				= $row['id'];
+	while($row = mysql_fetch_array($result)){
+		$_SESSION['account']['id']				= $row['id'];
 
-	go($site['url']."/dashboard");
-	die();
+		go($site['url']."/dashboard");
+		die();
+	}else{
+		status_message('danger', 'Incorrect Login details.');
+		go($site['url'].'/index');
+	}
+	
 }
 
 
 // login rejected
-status_message('danger', 'Incorrect Login details');
+status_message('danger', 'Something went wrong.');
 go($site['url'].'/index');
