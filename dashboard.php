@@ -295,67 +295,12 @@ desired effect
             </section>
 
 			<section class="content">
+				
 				<?php if(isset($_GET['dev'])){ ?>
 					<pre>
 						 source<?php print_r($site); ?>
 					</pre>
 				<?php } ?>
-				<div class="row">
-					<div class="col-md-12 col-xs-12">
-						<div class="col-md-1 col-xs-6">
-							<div class="box box-primary">
-                                <div class="box-body">
-                                    <h3>
-                                    	<strong>Miners:</strong> <br>
-                                    	<span id="total_miners">
-                                    		<?php echo $total_online_miners.' / '.$total_miners; ?>
-                                    	</span>
-                                    </h3>
-                                </div>
-                            </div>
-						</div>
-						<div class="col-md-1 col-xs-6">
-							<div class="box box-primary">
-                                <div class="box-body">
-                                    <h3>
-                                    	<strong>Hashrate:</strong> <br>
-                                    	<span id="total_hashrate">
-                                    		<?php echo number_format($total_hashrate, 2); ?> THs
-                                    	</span>
-                                    </h3>
-                                </div>
-                            </div>
-						</div>
-						<div class="col-md-2 col-xs-6">
-							<div class="box box-primary">
-                                <div class="box-body">
-                                    <h3>
-                                    	<strong>Avg Power:</strong> <br>
-                                    	<span id="total_kilowatts">
-                                    		<?php echo $total_kilowatts; ?> kWs
-                                    	</span>
-                                    	 / 
-                                    	<span id="total_amps">
-                                    		<?php echo $total_amps; ?> AMPs
-                                    	</span>
-                                    </h3>
-                                </div>
-                            </div>
-						</div>
-						<div class="col-md-2 col-xs-6">
-							<div class="box box-primary">
-                                <div class="box-body">
-                                    <h3>
-                                    	<strong>Avg Temp:</strong> <br>
-                                    	<span id="total_amps">
-                                    		<?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?>
-                                    	</span>
-                                    </h3>
-                                </div>
-                            </div>
-						</div>
-					</div>
-				</div>
 
 				<div class="row">
 					<div class="col-md-12 col-xs-12">
