@@ -268,6 +268,11 @@ desired effect
         	<?php $site 					= get_site($_SESSION['account']['id']); ?>
         	<?php $heatmap 					= build_heatmap_array($_SESSION['account']['id']); ?>
 
+        	<?php
+        		$total_miners 				= count($site['miners']);
+        		// $total_power = $site['power'];
+        	?>
+
             <div class="content-wrapper">
 				
                 <div id="status_message"></div>
@@ -281,6 +286,7 @@ desired effect
                 </section>
     
 				<section class="content">
+					<?php print_r($site['power']); ?>
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
 							<div class="col-md-3 col-xs-6">
@@ -290,7 +296,7 @@ desired effect
 									</div>
 									<div class="box-body text-center">
 										<h1>
-											<?php echo count($customer_miners); ?>
+											<?php echo count($total_miners); ?>
 										</h1>
 									</div>
 								</div>
