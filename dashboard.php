@@ -516,6 +516,16 @@ desired effect
 		    	<form method="post">
 			    	<div class="form-group">
 		                <label class="control-sidebar-subheading">
+		                    Miners:
+		                    <span id="total_miners" class="pull-right"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
+		                </label>
+		                <p>
+		                    Some information about this general settings option
+		                </p>
+		            </div>
+
+		            <div class="form-group">
+		                <label class="control-sidebar-subheading">
 		                    Miners
 		                </label>
 		                <p>
