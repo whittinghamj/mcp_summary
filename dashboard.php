@@ -1805,6 +1805,22 @@ desired effect
 				}
 			});	
 		}
+
+		$(function(){
+			$("#heatmap td").hottie({
+				
+			});
+			
+			$("#heatmap_index td").hottie({
+				
+			});
+			
+			$("#test2 li").hottie({
+				readValue : function(e) {
+					return $(e).attr("data-hist");
+			  	}
+			});
+		});
 	
 		$(function () {
 			$('#dashboard_sites').DataTable({
