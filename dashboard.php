@@ -303,7 +303,7 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Miners:</strong> 
+	                                    	<strong>Miners:</strong> <br>
 	                                    	<span id="total_miners">
 	                                    		<?php echo $total_online_miners.' / '.$total_miners; ?>
 	                                    	</span>
@@ -315,7 +315,7 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Hashrate:</strong> 
+	                                    	<strong>Hashrate:</strong> <br>
 	                                    	<span id="total_hashrate">
 	                                    		<?php echo number_format($total_hashrate, 2); ?> THs
 	                                    	</span>
@@ -327,9 +327,9 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Power:</strong> 
+	                                    	<strong>Power:</strong> <br>
 	                                    	<span id="total_kilowatts">
-	                                    		<?php echo $total_kilowatts; ?> KWs
+	                                    		<?php echo $total_kilowatts; ?> kWs
 	                                    	</span>
 	                                    	 / 
 	                                    	<span id="total_amps">
@@ -343,9 +343,9 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Temp:</strong> 
+	                                    	<strong>Temp:</strong> <br>
 	                                    	<span id="total_amps">
-	                                    		<?php echo $avg_temp; ?>
+	                                    		<?php echo c_to_f($avg_temp).'C / '$avg_temp.'F'; ?>
 	                                    	</span>
 	                                    </h3>
 	                                </div>
