@@ -310,11 +310,11 @@ desired effect
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
-										<h3 class="box-title">Monthly Cost</h3>
+										<h3 class="box-title">Power Watts</h3>
 									</div>
 									<div class="box-body text-center">
 										<h1>
-											$<?php echo number_format($total_cost, 2); ?>
+											~<?php echo number_format($total_cost, 2); ?>
 										</h1>
 									</div>
 								</div>
@@ -322,11 +322,11 @@ desired effect
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
 									<div class="box-header with-border">
-										<h3 class="box-title">Monthly Profit</h3>
+										<h3 class="box-title">Power AMPs</h3>
 									</div>
 									<div class="box-body text-center">
 										<h1>
-											$<?php echo number_format($total_profit, 2); ?>
+											~<?php echo number_format($total_profit, 2); ?>
 										</h1>
 									</div>
 								</div>
