@@ -206,98 +206,11 @@ desired effect
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                     	<li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="hidden-xs">
-									<img src="https://static.cryptorival.com/imgs/coins/BTC.svg" alt="Bitcoin" title="Bitcoin" class="user-image"> Crypto Prices
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                	<div class="row">
-	                                    <div class="col-xs-4 text-center">
-	                                        <img src="https://static.cryptorival.com/imgs/coins/BTC.svg" alt="Bitcoin" title="Bitcoin" height="35" width="35"><br>$<?php echo number_format($crypto_prices['BTC']['usd'], 0); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                                        <img src="https://static.cryptorival.com/imgs/coins/BCH.svg" alt="BitcoinCash" title="BitcoinCash" height="35" width="35"><br>$<?php echo number_format($crypto_prices['BCH']['usd'], 0); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                                        <img src="https://static.cryptorival.com/imgs/coins/LTC.svg" alt="Litecoin" title="Litecoin" height="35" width="35"><br>$<?php echo number_format($crypto_prices['LTC']['usd'], 0); ?>
-	                                    </div>
-                                    </div>
-                                    <div class="row">
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/DASH.svg" alt="DASH" title="DASH" height="35" width="35"><br>$<?php echo number_format($crypto_prices['DASH']['usd'], 0); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/ETH.svg" alt="Ethereum" title="Ethereum" height="35" width="35"><br>$<?php echo number_format($crypto_prices['ETH']['usd'], 2); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/ETC.svg" alt="Ethereum Classic" title="Ethereum Classic" height="35" width="35"><br>$<?php echo number_format($crypto_prices['ETC']['usd'], 2); ?>
-	                                    </div>
-	                                </div>
-	                                <div class="row">
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/XRP.svg" alt="XRP" title="XRP" height="35" width="35"><br>$<?php echo number_format($crypto_prices['XRP']['usd'], 2); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/XMR.svg" alt="Monero" title="Monero" height="35" width="35"><br>$<?php echo number_format($crypto_prices['XMR']['usd'], 2); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/SC.svg" alt="Siacoin" title="Siacoin" height="35" width="35"><br>$<?php echo number_format($crypto_prices['SC']['usd'], 2); ?>
-	                                    </div>
-	                                </div>
-	                                <div class="row">
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/ZEC.svg" alt="ZCash" title="ZCash" height="35" width="35"><br>$<?php echo number_format($crypto_prices['ZEC']['usd'], 2); ?>
-	                                    </div>
-	                                    <div class="col-xs-4 text-center">
-	                   						<img src="https://static.cryptorival.com/imgs/coins/ETN.svg" alt="electroneum" title="electroneum" height="35" width="35"><br>$<?php echo number_format($crypto_prices['ETN']['usd'], 2); ?>
-	                                    </div>
-	                                </div>
-                                </li>
-                            </ul>
+                            
                         </li>
                        
                         <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo $account_details['avatar']; ?>" class="user-image" alt="User Image">
-                                <span class="hidden-xs">
-									<?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="user-header">
-                                    <img src="<?php echo $account_details['avatar']; ?>" class="img-circle" alt="User Image">
-                                    <p>
-                                        <?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>
-                                        <small><?php echo $account_details['email']; ?></small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <!--
-                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </li>
-                                -->
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="<?php echo $site['url']; ?>/dashboard?c=my_account" class="btn btn-default btn-flat">My Account</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="<?php echo $site['url']; ?>/logout" class="btn btn-default btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
+                            
                         </li>
                         <!-- Control Sidebar Toggle Button -->
 						<li>
