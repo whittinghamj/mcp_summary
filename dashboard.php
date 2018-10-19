@@ -295,7 +295,7 @@ desired effect
             </section>
 
 			<section class="content">
-				
+
 				<?php if(isset($_GET['dev'])){ ?>
 					<pre>
 						 source<?php print_r($site); ?>
@@ -454,7 +454,7 @@ desired effect
         
         <!-- Tab panes -->
 		<div class="tab-content">
-	    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
+	    	<h3 class="control-sidebar-heading">Site Summary</h3>
 	    	<form method="post">
 		    	<div class="form-group">
 	                <label class="control-sidebar-subheading">
