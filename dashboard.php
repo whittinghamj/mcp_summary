@@ -275,6 +275,8 @@ desired effect
         		$total_watts				= number_format($site['power']['watts'], 2);
         		$total_kilowatts			= number_format($site['power']['kilowatts'], 2);
         		$total_amps					= number_format($site['power']['amps'], 2);
+
+        		$avg_temp					= $site['average_temps']['average_pcb'];
         	?>
 
             <div class="content-wrapper">
@@ -292,7 +294,7 @@ desired effect
 				<section class="content">
 					<?php if(isset($_GET['dev'])){ ?>
 						<pre>
-						<?php print_r($site['miners']); ?>
+							 source<?php print_r($site); ?>
 						</pre>
 					<?php } ?>
 					<div class="row">
@@ -341,9 +343,9 @@ desired effect
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
-	                                    	<strong>Power:</strong> 
+	                                    	<strong>Temp:</strong> 
 	                                    	<span id="total_amps">
-	                                    		<?php echo $total_amps; ?> AMPs
+	                                    		<?php echo $avg_temp; ?>
 	                                    	</span>
 	                                    </h3>
 	                                </div>
