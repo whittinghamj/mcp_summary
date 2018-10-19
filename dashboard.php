@@ -269,7 +269,8 @@ desired effect
         	<?php $heatmap 					= build_heatmap_array($_SESSION['account']['id']); ?>
 
         	<?php
-        		$total_miners 				= count($site['miners']);
+        		$total_miners 				= $site['total_offline_miners'] + $site['total_online_miners'];
+        		$total_online_miners		= $site['total_online_miners'];
         		// $total_power = $site['power'];
         		$total_watts				= number_format($site['power']['watts'], 2);
         		$total_kilowatts			= number_format($site['power']['kilowatts'], 2);
@@ -299,7 +300,7 @@ desired effect
 	                                    <h3>
 	                                    	<strong>Miners:</strong> 
 	                                    	<span id="total_miners">
-	                                    		<?php echo count($total_miners); ?>
+	                                    		<?php echo $total_online_miners.' / '.$total_miners; ?>
 	                                    	</span>
 	                                    </h3>
 	                                </div>
