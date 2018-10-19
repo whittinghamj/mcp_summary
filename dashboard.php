@@ -526,40 +526,31 @@ desired effect
 
 		            <div class="form-group">
 		                <label class="control-sidebar-subheading">
-		                    Miners
+		                    Hashrate:
+		                    <span id="total_hashrate" class="pull-right"><?php echo number_format($total_hashrate, 2); ?> THs</span>
 		                </label>
 		                <p>
-		                    <span id="total_miners" class="pull-left"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
+		                    Some information about this general settings option
 		                </p>
 		            </div>
 
 		            <div class="form-group">
 		                <label class="control-sidebar-subheading">
-		                    Hashrate
+		                    Power:
+		                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs / <?php echo $total_amps; ?> AMPs</span>
 		                </label>
 		                <p>
-		                	<span id="total_hashrate" class="pull-left"><?php echo number_format($total_hashrate, 2); ?> THs</span>
+		                    Some information about this general settings option
 		                </p>
 		            </div>
 
 		            <div class="form-group">
 		                <label class="control-sidebar-subheading">
-		                    Est Power
+		                    Temp:
+		                    <span id="avg_temp" class="pull-left"><?php echo $avg_temp.'°F'; ?></span>
 		                </label>
 		                <p>
-		                	<span id="avg_power" class="pull-left">
-		                		<?php echo $total_kilowatts; ?> kWs <br>
-		                		<?php echo $total_amps; ?> AMPs
-		                	</span>
-		                </p>
-		            </div>
-
-		            <div class="form-group">
-		                <label class="control-sidebar-subheading">
-		                    Avg Temp:
-		                </label>
-		                <p>
-		                	<span id="avg_temp" class="pull-left"><?php echo $avg_temp.'°F'; ?></span>
+		                    Some information about this general settings option
 		                </p>
 		            </div>
 		        </form>
