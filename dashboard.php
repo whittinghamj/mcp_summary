@@ -290,28 +290,26 @@ desired effect
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
 							<div class="col-md-3 col-xs-6">
-								<div class="box box-primary box-solid">
-									<div class="box-header with-border">
-										<h3 class="box-title">Miners</h3>
-									</div>
-									<div class="box-body text-center">
-										<h1>
-											<?php echo count($total_miners); ?>
-										</h1>
-									</div>
-								</div>
+								<div class="box box-primary">
+	                                <div class="box-body">
+	                                    <h3>
+	                                    	<strong>Miners:</strong> <span id="total_miners">
+	                                    		<?php echo count($total_miners); ?>
+	                                    	</span>
+	                                    </h3>
+	                                </div>
+	                            </div>
 							</div>
 							<div class="col-md-3 col-xs-6">
-								<div class="box box-primary box-solid">
-									<div class="box-header with-border">
-										<h3 class="box-title">Hashrate</h3>
-									</div>
-									<div class="box-body text-center">
-										<h1>
-											<?php echo number_format($total_hashrate, 2); ?> THs
-										</h1>
-									</div>
-								</div>
+								<div class="box box-primary">
+	                                <div class="box-body">
+	                                    <h3>
+	                                    	<strong>Hashrate:</strong> <span id="total_hashrate">
+	                                    		<?php echo number_format($total_hashrate, 2); ?> THs
+	                                    	</span>
+	                                    </h3>
+	                                </div>
+	                            </div>
 							</div>
 							<div class="col-md-3 col-xs-6">
 								<div class="box box-primary box-solid">
