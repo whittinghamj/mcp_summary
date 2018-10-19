@@ -566,15 +566,15 @@ desired effect
 
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
-	                    Avg Power
+	                    Power
 	                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs</span> / <span id="total_amps"><?php echo $total_amps; ?> AMPs</span>
 	                </label>
 	            </div>
 
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
-	                    Avg Temp
-	                    <span id="avg_temp" class="pull-right"><?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?></span>
+	                    Temp
+	                    <span id="avg_temp" class="pull-right"><?php echo $avg_temp.'°F'; ?></span>
 	                </label>
 	            </div>
 		    </div>
