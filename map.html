@@ -1,0 +1,39 @@
+
+
+<script>
+    var geocoder;
+    var map;
+    var address = "new york city";
+    geocoder = new google.maps.Geocoder();
+    function initMap() {
+        var uluru = { lat: -25.363, lng: 131.044 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+        codeAddress(address);
+
+    }
+
+    function codeAddress(address) {
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == 'OK') {
+                    var marker = new google.maps.Marker({
+                    position: address,
+                    map: map
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpMWtXLvl-a6YsAAB2HBQvK-_c0_zDtXg&callback=initMap"
+    async defer></script>

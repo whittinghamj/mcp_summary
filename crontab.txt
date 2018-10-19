@@ -1,0 +1,7 @@
+## miningcontrolpanel.com controller cron jobs
+
+## update dashboard.miningcontrolpanel.com from github.com
+* * * * * sh /home2/mcp/public_html/dashboard/update.sh > /dev/null 2>&1
+
+## use miner name is worker_name is empty
+* * * * * php -q /home2/mcp/public_html/dashboard/console/console.php assign_worker_name > /dev/null 2>&1

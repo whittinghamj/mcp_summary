@@ -1,0 +1,1 @@
+git clone git@github.com:whittinghamj/mcp_gui.git
