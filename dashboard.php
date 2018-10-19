@@ -485,7 +485,7 @@ desired effect
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
 	                    Temp:
-	                    <span id="avg_temp" class="pull-right"><?php echo number_format(f_to_c($avg_temp), 2).'°C' .number_format($avg_temp, 2).'°F'; ?></span>
+	                    <span id="avg_temp" class="pull-right"><?php echo number_format(f_to_c($avg_temp), 2).'°C / ' .number_format($avg_temp, 2).'°F'; ?></span>
 	                </label>
 	                <p>
 	                    Average temperature across all online miners in this site.
