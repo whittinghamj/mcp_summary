@@ -50,7 +50,7 @@ include('inc/functions.php');
                     <div id="status_message"></div>
                     <form action="login.php" method="post">
                         <div class="form-group has-feedback">
-                            <input type="number" class="form-control" placeholder="12345" name="passcode" id="passcode">
+                            <input type="number" pattern="\-?\d+(\.\d{0,})?" class="form-control" placeholder="12345" name="passcode" id="passcode">
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                         <div class="row">
