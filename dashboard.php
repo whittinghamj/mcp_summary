@@ -285,14 +285,6 @@ desired effect
         <div class="content-wrapper">
 			
             <div id="status_message"></div>
-                        	
-            <section class="content-header">
-                <h1>Dashboard <!-- <small>Optional description</small> --></h1>
-                <ol class="breadcrumb">
-                    <li class="active"><a href="<?php echo $site['url']; ?>/dashboard">Dashboard</a></li>
-                    <!-- <li class="active">Here</li> -->
-                </ol>
-            </section>
 
 			<section class="content">
 
