@@ -299,7 +299,7 @@ desired effect
 					<?php } ?>
 					<div class="row">
 						<div class="col-md-12 col-xs-12">
-							<div class="col-md-3 col-xs-6">
+							<div class="col-md-2 col-xs-6">
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
@@ -311,7 +311,7 @@ desired effect
 	                                </div>
 	                            </div>
 							</div>
-							<div class="col-md-3 col-xs-6">
+							<div class="col-md-2 col-xs-6">
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
@@ -323,7 +323,7 @@ desired effect
 	                                </div>
 	                            </div>
 							</div>
-							<div class="col-md-3 col-xs-6">
+							<div class="col-md-2 col-xs-6">
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
@@ -339,7 +339,7 @@ desired effect
 	                                </div>
 	                            </div>
 							</div>
-							<div class="col-md-3 col-xs-6">
+							<div class="col-md-2 col-xs-6">
 								<div class="box box-primary">
 	                                <div class="box-body">
 	                                    <h3>
