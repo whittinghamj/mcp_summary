@@ -520,7 +520,7 @@ desired effect
 		                    <span id="total_miners" class="pull-right"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
 		                </label>
 		                <p>
-		                    Some information about this general settings option
+		                    Number of online vs total miners for this site.
 		                </p>
 		            </div>
 
@@ -530,7 +530,7 @@ desired effect
 		                    <span id="total_hashrate" class="pull-right"><?php echo number_format($total_hashrate, 2); ?> THs</span>
 		                </label>
 		                <p>
-		                    Some information about this general settings option
+		                    Estimated hashrate for all miners in this site.
 		                </p>
 		            </div>
 
@@ -540,17 +540,17 @@ desired effect
 		                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs / <?php echo $total_amps; ?> AMPs</span>
 		                </label>
 		                <p>
-		                    Some information about this general settings option
+		                    Estimated power consumption based upon stock settings for each miner in this site.
 		                </p>
 		            </div>
 
 		            <div class="form-group">
 		                <label class="control-sidebar-subheading">
 		                    Temp:
-		                    <span id="avg_temp" class="pull-left"><?php echo $avg_temp.'°F'; ?></span>
+		                    <span id="avg_temp" class="pull-right"><?php echo $avg_temp.'°F'; ?></span>
 		                </label>
 		                <p>
-		                    Some information about this general settings option
+		                    Average temperature across all online miners in this site.
 		                </p>
 		            </div>
 		        </form>
