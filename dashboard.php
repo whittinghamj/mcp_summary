@@ -13,6 +13,25 @@ session_start();
 include('inc/global_vars.php');
 include('inc/functions.php');
 
+$passcode 						= get('passcode');
+
+// reject login if passcode is empty
+if(empty($passcode))
+{
+	// status_message('danger', 'Passcode cannot be empty.');
+	go($site['url'].'/index');
+}
+
+
+$query = "SELECT `id` FROM `sites` WHERE `summary_passcode` = '".$passcode."' ";
+$result = mysql_query($query) or die(mysql_error());
+$found = mysql_num_rows($result);
+if($found > 0){
+	while($row = mysql_fetch_array($result)){
+		$_SESSION['account']['id']				= $row['id'];
+	}
+}
+
 // check is account->id is set, if not then assume user is not logged in correctly and redirect to login page
 if(empty($_SESSION['account']['id'])){
 	status_message('danger', 'Login Session Timeout');
