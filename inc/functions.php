@@ -1393,6 +1393,7 @@ function get_site($site_id, $type ='')
 			$data['hashrate']["$algorithm"]  		= show_hashrate($row['id'], $algorithm);
 		}
 
+		$data['average_temps']['total_pcb'] = 0;
 		foreach($data['miners'] as $miner){
 			if($miner['status_raw'] == 'mining'){$data['total_online_miners']++;}
 			if($miner['status_raw'] != 'mining'){$data['total_offline_miners']++;}

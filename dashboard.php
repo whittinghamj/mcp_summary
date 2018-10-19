@@ -279,7 +279,7 @@ desired effect
     		$total_kilowatts			= number_format($site['power']['kilowatts'], 2);
     		$total_amps					= number_format($site['power']['amps'], 2);
 
-    		$avg_temp					= $site['average_temps']['average_pcb'];
+    		$avg_temp					= $site['average_temps']['total_pcb'] / $total_online_miners;
     	?>
 
         <div class="content-wrapper">
