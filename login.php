@@ -75,11 +75,11 @@ if($found > 0){
 
 		go($site['url']."/dashboard");
 		die();
-	}else{
-		status_message('danger', 'Incorrect Login details.');
-		go($site['url'].'/index');
 	}
-	
+
+}else{
+	status_message('danger', 'Incorrect Login details.');
+	go($site['url'].'/index');
 }
 
 
