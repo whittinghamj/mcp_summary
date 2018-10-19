@@ -491,7 +491,7 @@ desired effect
         <!-- Tab panes -->
 		<div class="tab-content">
 		    <div class="tab-pane active" id="control-sidebar-settings-tab">
-		        <!-- 
+		        
 		        <form method="post">
 		            <h3 class="control-sidebar-heading">Settings</h3>
 		            <div class="form-group">
@@ -547,35 +547,29 @@ desired effect
 		                </label>
 		            </div>
 		        </form>
-		    	-->
+		    	
 		    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
 		    	<div class="col-md-12 col-xs-12">
                 	<strong>Miners:</strong> <br>
-                	<span id="total_miners">
-                		<?php echo $total_online_miners.' / '.$total_miners; ?>
-                	</span>
+                	<span id="total_miners"><?php echo $total_online_miners.' / '.$total_miners; ?></span>
 				</div>
+				<br>
+
 				<div class="col-md-1 col-xs-6">
                 	<strong>Hashrate:</strong> <br>
-                	<span id="total_hashrate">
-                		<?php echo number_format($total_hashrate, 2); ?> THs
-                	</span>
+                	<span id="total_hashrate"><?php echo number_format($total_hashrate, 2); ?> THs</span>
 				</div>
+				<br>
+
 				<div class="col-md-2 col-xs-6">
 					<strong>Avg Power:</strong> <br>
-                	<span id="total_kilowatts">
-                		<?php echo $total_kilowatts; ?> kWs
-                	</span>
-                	 / 
-                	<span id="total_amps">
-                		<?php echo $total_amps; ?> AMPs
-                	</span>
+                	<span id="total_kilowatts"><?php echo $total_kilowatts; ?> kWs</span> / <span id="total_amps"><?php echo $total_amps; ?> AMPs</span>
 				</div>
+				<br>
+
 				<div class="col-md-2 col-xs-6">
 					<strong>Avg Temp:</strong> <br>
-                	<span id="total_amps">
-                		<?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?>
-                	</span>
+                	<span id="total_amps"><?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?></span>
 				</div>
 		    </div>
 		</div>
