@@ -1718,7 +1718,58 @@ desired effect
 		        </form>
 		    	-->
 		    	<h3 class="control-sidebar-heading">Function Coming Soon</h3>
-		    	This is a placeholder for future deployment.
+		    	<div class="col-md-1 col-xs-6">
+					<div class="box box-primary">
+                        <div class="box-body">
+                            <h3>
+                            	<strong>Miners:</strong> <br>
+                            	<span id="total_miners">
+                            		<?php echo $total_online_miners.' / '.$total_miners; ?>
+                            	</span>
+                            </h3>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-md-1 col-xs-6">
+					<div class="box box-primary">
+                        <div class="box-body">
+                            <h3>
+                            	<strong>Hashrate:</strong> <br>
+                            	<span id="total_hashrate">
+                            		<?php echo number_format($total_hashrate, 2); ?> THs
+                            	</span>
+                            </h3>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-md-2 col-xs-6">
+					<div class="box box-primary">
+                        <div class="box-body">
+                            <h3>
+                            	<strong>Avg Power:</strong> <br>
+                            	<span id="total_kilowatts">
+                            		<?php echo $total_kilowatts; ?> kWs
+                            	</span>
+                            	 / 
+                            	<span id="total_amps">
+                            		<?php echo $total_amps; ?> AMPs
+                            	</span>
+                            </h3>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-md-2 col-xs-6">
+					<div class="box box-primary">
+                        <div class="box-body">
+                            <h3>
+                            	<strong>Avg Temp:</strong> <br>
+                            	<span id="total_amps">
+                            		<?php echo f_to_c($avg_temp).'°C / '.$avg_temp.'°F'; ?>
+                            	</span>
+                            </h3>
+                        </div>
+                    </div>
+				</div>
 		    </div>
 		</div>
       </aside>
