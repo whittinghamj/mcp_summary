@@ -1489,7 +1489,7 @@ function get_coins()
 }
 
 // miners > asic
-function get_miners($site_id, $account_id = '', $type)
+function get_miners($site_id, $account_id = '', $type = '')
 {
 	if(empty($type)){
 		$query = "SELECT `id` FROM `site_miners` WHERE `site_id` = '".$site_id."' ORDER BY `name`,INET_ATON(ip_address) ASC";
