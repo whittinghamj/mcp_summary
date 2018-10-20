@@ -421,7 +421,7 @@ desired effect
 	    	window.speechSynthesis.speak(msg);
 	    }
 
-	    var refreshTime = 30000; // every 30 seconds in milliseconds
+	    var refreshTime = 5000; // every 5 seconds in milliseconds
 
 	    window.setInterval( function() {
 			load_heatmap()
