@@ -424,17 +424,17 @@ desired effect
 	    var refreshTime = 5000; // every 5 seconds in milliseconds
 
 	    window.setInterval( function() {
-			load_heatmap()
+			load_heatmap(<?php echo $_SESSION['account']['id']; ?>); 
 		}, refreshTime );
 
 		$(document).ready(function(){
-			load_heatmap(); 
+			load_heatmap(<?php echo $_SESSION['account']['id']; ?>); 
 		});
 
-		function load_heatmap()
+		function load_heatmap(site_id)
 		{
 			console.log("Updating heatmap view");
-			$("#headmap_loader").load('ajax_heatmap.php');
+			$("#headmap_loader").load('ajax_heatmap.php?site_id='+site_id);
 		}
 	</script>
 
