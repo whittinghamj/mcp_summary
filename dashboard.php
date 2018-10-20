@@ -5,20 +5,21 @@ if($_GET['dev'] == 'yes'){
 	ini_set('error_reporting', E_ALL);
 }
 
-include('inc/db.php');
-include('inc/sessions.php');
+include('../dashboard/inc/db.php');
+include('../dashboard/inc/sessions.php');
 $sess = new SessionManager();
 session_start();
 
-include('inc/global_vars.php');
-include('inc/functions.php');
+// include('inc/error/error.php');
+include('../dashboard/inc/global_vars.php');
+include('../dashboard/inc/functions.php');
 
 $passcode 						= get('passcode');
 
 // reject login if passcode is empty
 if(empty($passcode))
 {
-	// status_message('danger', 'Passcode cannot be empty.');
+	status_message('danger', 'Passcode cannot be empty.');
 	go($site['url'].'/index');
 }
 
@@ -45,7 +46,7 @@ if(empty($_SESSION['account']['id'])){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php echo $site['title']; ?></title>
+    <title><?php echo $site['title']; ?> - Summary</title>
 
     <link rel="icon" type="image/png" href="img/favicon.ico?v=2" sizes="32x32" />
 
