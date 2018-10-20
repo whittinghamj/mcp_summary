@@ -340,7 +340,7 @@ desired effect
 																	<td width="35px" align="center" valign="middle">
 																		<span class="miner_heatmap miner_customer_id_'.$position['miner_customer']['id'].'">
 																			<ul id="test2" style="display: table; width: 100%;">
-																				<li id="'.$position['miner_id'].'" style="width: 100%; list-style-type: none; display:inline-block;" data-hist="'.$position['miner_temp'].'">
+																				<li id="heatmap_'.$position['miner_id'].'" style="width: 100%; list-style-type: none; display:inline-block;" data-hist="'.$position['miner_temp'].'">
 																					<span data-html="true" data-toggle="tooltip" data-placement="top" title="<strong>Name:</strong> '.$position['miner_name'].'  <br> <strong>IP:</strong> '.$position['miner_ip'].'  <br> <strong>Hardware:</strong> '.$position['miner_hardware'].'<br> <strong>Hashrate:</strong> '.$position['miner_hashrate'].' <br> <strong>Customer:</strong> '.$position['miner_customer']['fullname'].'">
 																					<u>'.$position['miner_location'].'</u>
 																					</span>
@@ -366,6 +366,14 @@ desired effect
 										}
 									?>
 
+									<hr>
+
+									<li id="heatmap_test" style="width: 100%; list-style-type: none; display:inline-block;" data-hist="50">
+										
+										<u>test location</u>
+										<br>
+										<small>test status</small>
+									</li>
 									<hr>
 
 									<table id="heatmap_index" width="100%" cellpadding="4px">
