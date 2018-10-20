@@ -22,15 +22,10 @@ $now = time();
 
 $passcode 						= post('passcode');
 
-echo '<pre>';
-
-print_r($_GET);
-print_r($_POST);
-die();
-
 // reject login if passcode is empty
 if(empty($passcode))
 {
+	die('$passcode was empty.');
 	status_message('danger', 'Passcode cannot be empty.');
 	go($site['url'].'/index');
 }
@@ -48,6 +43,7 @@ if($found > 0){
 	}
 
 }else{
+	die('$passcode did not match any site summary_passcode.');
 	status_message('danger', 'Incorrect Login details.');
 	go($site['url'].'/index');
 }
