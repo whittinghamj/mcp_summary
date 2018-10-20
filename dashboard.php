@@ -680,6 +680,11 @@ desired effect
 		        $('#modal-terms').modal({backdrop: 'static', keyboard: false});
 		    });
 		<?php } ?>
+
+		console.log($('#heatmap_32482').html());   // alerts <div id="mydiv" data-myval="10"> </div>
+		var a = $('#heatmap_32482').data('hist'); //getter
+		$('#heatmap_32482').attr("data-hist","100"); //setter
+		console.log($('#heatmap_32482').html());
 	</script>
 
 </body>
