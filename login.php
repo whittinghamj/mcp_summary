@@ -10,8 +10,8 @@ $sess = new SessionManager();
 session_start();
 
 // include('inc/error/error.php');
-include('../dashboard/inc/global_vars.php');
-include('../dashboard/inc/functions.php');
+include('inc/global_vars.php');
+include('inc/functions.php');
 
 // debug($_POST);
 
