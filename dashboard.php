@@ -385,7 +385,6 @@ desired effect
       <div class="control-sidebar-bg"></div>
     </div>
 
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 	<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
@@ -412,22 +411,6 @@ desired effect
 				}
 			});	
 		}
-
-		$(function(){
-			$("#heatmap td").hottie({
-				
-			});
-			
-			$("#heatmap_index td").hottie({
-				
-			});
-			
-			$("#test2 li").hottie({
-				readValue : function(e) {
-					return $(e).attr("data-hist");
-			  	}
-			});
-		});
 	</script>
 	
 	<script src="dist/js/jquery.hottie.js"></script>

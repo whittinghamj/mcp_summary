@@ -139,3 +139,21 @@ $heatmap 					= build_heatmap_array($_SESSION['account']['id']);
 		</td>
 	</tr>
 </table>
+
+<script>
+	$(function(){
+		$("#heatmap td").hottie({
+			
+		});
+		
+		$("#heatmap_index td").hottie({
+			
+		});
+		
+		$("#test2 li").hottie({
+			readValue : function(e) {
+				return $(e).attr("data-hist");
+		  	}
+		});
+	});
+</script>
