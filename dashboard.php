@@ -462,6 +462,7 @@ desired effect
 	                </p>
 	            </div>
 
+	            <!--
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
 	                    Hashrate:
@@ -471,6 +472,7 @@ desired effect
 	                    Estimated hashrate for all miners in this site.
 	                </p>
 	            </div>
+	        	-->
 
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
