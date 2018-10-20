@@ -82,9 +82,23 @@ $heatmap 					= build_heatmap_array($_SESSION['account']['id']);
 
 <table id="heatmap_index" width="100%" cellpadding="4px">
 	<tr>
+		<?php foreach (range(0,200,5) as $number){ ?>
+			<td align="center" valign="middle" style="font-weight: bolder">
+				<ul id="test2" style="display: table; width: 100%;">
+					<li style="width: 100%; list-style-type: none; display:inline-block;" data-hist="<?php echo $number; ?>"><?php echo $number; ?></li>
+				</ul>
+			</td>
+		<?php } ?>
+		
+		<!--
 		<td align="center" valign="middle" style="font-weight: bolder">
 			<ul id="test2" style="display: table; width: 100%;">
 				<li style="width: 100%; list-style-type: none; display:inline-block;" data-hist="0">0</li>
+			</ul>
+		</td>
+		<td align="center" valign="middle" style="font-weight: bolder">
+			<ul id="test2" style="display: table; width: 100%;">
+				<li style="width: 100%; list-style-type: none; display:inline-block;" data-hist="5">5</li>
 			</ul>
 		</td>
 		<td align="center" valign="middle" style="font-weight: bolder">
@@ -94,12 +108,27 @@ $heatmap 					= build_heatmap_array($_SESSION['account']['id']);
 		</td>
 		<td align="center" valign="middle" style="font-weight: bolder">
 			<ul id="test2" style="display: table; width: 100%;">
+				<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="15">15</li>
+			</ul>
+		</td>
+		<td align="center" valign="middle" style="font-weight: bolder">
+			<ul id="test2" style="display: table; width: 100%;">
 				<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="20">20</li>
 			</ul>
 		</td>
 		<td align="center" valign="middle" style="font-weight: bolder">
 			<ul id="test2" style="display: table; width: 100%;">
+				<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="25">25</li>
+			</ul>
+		</td>
+		<td align="center" valign="middle" style="font-weight: bolder">
+			<ul id="test2" style="display: table; width: 100%;">
 				<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="30">30</li>
+			</ul>
+		</td>
+		<td align="center" valign="middle" style="font-weight: bolder">
+			<ul id="test2" style="display: table; width: 100%;">
+				<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="20">20</li>
 			</ul>
 		</td>
 		<td align="center" valign="middle" style="font-weight: bolder">
@@ -137,6 +166,7 @@ $heatmap 					= build_heatmap_array($_SESSION['account']['id']);
 				<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="100">100</li>
 			</ul>
 		</td>
+		-->
 	</tr>
 </table>
 
