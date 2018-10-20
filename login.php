@@ -22,6 +22,12 @@ $now = time();
 
 $passcode 						= post('passcode');
 
+echo '<pre>';
+
+print_r($_GET);
+print_r($_POST);
+die();
+
 // reject login if passcode is empty
 if(empty($passcode))
 {
