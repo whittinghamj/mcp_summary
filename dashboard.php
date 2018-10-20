@@ -269,7 +269,6 @@ desired effect
         </aside>
         
     	<?php $site 					= get_site($_SESSION['account']['id']); ?>
-    	<?php $heatmap 					= build_heatmap_array($_SESSION['account']['id']); ?>
 
     	<?php
     		$total_miners 				= $site['total_offline_miners'] + $site['total_online_miners'];
@@ -306,126 +305,9 @@ desired effect
 									<h3 class="box-title">Heatmap</h3>
 								</div>
 								<div class="box-body text-center">
-									<style>
-										.grayout {
-										/* display: none; */
-										background-color: gray;
-										opacity: .3;
-									}
-									</style>
-
-									<?php
-
-										if(is_array($heatmap['table']))
-										{
-											foreach ($heatmap['table'] as $key_rows => $rows){
-												echo '
-												<h4><strong>Row: '.$key_rows.'</strong></h4>
-
-												<div id="heatmap" width="100%">
-												';
-
-												foreach($rows as $key_racks => $racks){
-													echo '
-														<table class="" border="1" style="display: inline-block;">
-															<thead><tr><td colspan="5"><strong>Rack: '.$key_racks.'</strong></td></tr></thead>
-															<tbody>
-													';
-
-														foreach($racks as $shelfs){
-															echo '<tr>';
-
-															foreach($shelfs as $position){
-																echo '
-																	<td width="35px" align="center" valign="middle">
-																		<span class="miner_heatmap miner_customer_id_'.$position['miner_customer']['id'].'">
-																			<ul id="test2" style="display: table; width: 100%;">
-																				<li id="heatmap_'.$position['miner_id'].'" style="width: 100%; list-style-type: none; display:inline-block;" data-hist="'.$position['miner_temp'].'">
-																					<span data-html="true" data-toggle="tooltip" data-placement="top" title="<strong>Name:</strong> '.$position['miner_name'].'  <br> <strong>IP:</strong> '.$position['miner_ip'].'  <br> <strong>Hardware:</strong> '.$position['miner_hardware'].'<br> <strong>Hashrate:</strong> '.$position['miner_hashrate'].' <br> <strong>Customer:</strong> '.$position['miner_customer']['fullname'].'">
-																					<u>'.$position['miner_location'].'</u>
-																					</span>
-																					<br>
-																					<small>'.$position['miner_status'].'</small>
-																				</li>
-																			</ul>
-																		</span>
-																	</td>';
-															}
-
-															echo '</tr>';
-														}
-
-													echo '
-														</tbody>
-													</table>
-													';
-												}
-												echo '</div>';
-											}
-										}
-									?>
-
-									<hr>
-
-									<table id="heatmap_index" width="100%" cellpadding="4px">
-										<tr>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display:inline-block;" data-hist="0">0</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="10">10</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="20">20</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="30">30</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="40">40</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="50">50</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="60">60</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="70">70</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="80">80</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="90">90</li>
-												</ul>
-											</td>
-											<td align="center" valign="middle" style="font-weight: bolder">
-												<ul id="test2" style="display: table; width: 100%;">
-													<li style="width: 100%; list-style-type: none; display: table-cell;" data-hist="100">100</li>
-												</ul>
-											</td>
-										</tr>
-									</table>
+									<div id="headmap_loader">
+										Loading ...
+									</div>
 								</div>
 							</div>
 						</div>
@@ -519,7 +401,8 @@ desired effect
     <?php } ?>
     
     <script>
-		function set_status_message(status, message){
+		function set_status_message(status, message)
+		{
 			$.ajax({
 				cache: false,
 				type: "GET",
@@ -545,126 +428,6 @@ desired effect
 			  	}
 			});
 		});
-	
-		$(function () {
-			$('#dashboard_sites').DataTable({
-		  		"paging": false,
-		  		"lengthChange": false,
-		  		"searching": false,
-		  		"ordering": false,
-		  		"info": false,
-		  		"autoWidth": false,
-				"iDisplayLength": 20,
-			});
-	  	});
-
-	  	$(function () {
-			$('#sites').DataTable({
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": false,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 100,
-			});
-	  	});
-		
-		$(function () {
-			$('#asic_miners_table').DataTable({
-				"order": [[ 2, "asc" ]],
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": false,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 254,
-				search: {
-				   search: '<?php echo $_GET['search']; ?>'
-				}
-			});
-	  	});
-
-	  	$(function () {
-			$('#gpu_miners_table').DataTable({
-				"order": [[ 2, "asc" ]],
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": false,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 254,
-				search: {
-				   search: '<?php echo $_GET['search']; ?>'
-				}
-			});
-	  	});
-		
-		$(function () {
-			$('#pools').DataTable({
-				"order": [[ 1, "asc" ]],
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": false,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 254,
-				search: {
-				   search: '<?php echo $_GET['search']; ?>'
-				}
-			});
-	  	});
-		
-		$(function () {
-			$('#pool_profiles').DataTable({
-				"order": [[ 1, "asc" ]],
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": false,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 254,
-				search: {
-				   search: '<?php echo $_GET['search']; ?>'
-				}
-			});
-	  	});
-
-	  	$(function () {
-			$('#invoices').DataTable({
-				"order": [[ 1, "desc" ]],
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": false,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 254,
-				search: {
-				   search: '<?php echo $_GET['search']; ?>'
-				}
-			});
-	  	});
-
-	  	$(function () {
-			$('#hardware_calc').DataTable({
-				"order": [[ 0, "asc" ]],
-		  		"paging": true,
-		  		"lengthChange": false,
-		  		"searching": true,
-		  		"ordering": true,
-		  		"info": true,
-		  		"autoWidth": false,
-				"iDisplayLength": 254,
-				search: {
-				   search: '<?php echo $_GET['search']; ?>'
-				}
-			});
-	  	});
 	</script>
 	
 	<script src="dist/js/jquery.hottie.js"></script>
@@ -674,17 +437,22 @@ desired effect
 	    	var msg = new SpeechSynthesisUtterance(text);
 	    	window.speechSynthesis.speak(msg);
 	    }
-	
-	    <?php if($account_details['accepted_terms'] == 'no'){ ?>
-		    $(window).on('load',function(){
-		        $('#modal-terms').modal({backdrop: 'static', keyboard: false});
-		    });
-		<?php } ?>
 
-		console.log($('#heatmap_32482').html());   // alerts <div id="mydiv" data-myval="10"> </div>
-		var a = $('#heatmap_32482').data('hist'); //getter
-		$('#heatmap_32482').attr("data-hist","100"); //setter
-		console.log($('#heatmap_32482').html());
+	    var refreshTime = 30000; // every 30 seconds in milliseconds
+
+	    window.setInterval( function() {
+			load_heatmap()
+		}, refreshTime );
+
+		$(document).ready(function(){
+			load_heatmap(); 
+		});
+
+		function load_heatmap()
+		{
+			console.log("Updating heatmap view");
+			$("#headmap_loader").html('<object data="ajax_heatmap.php">');
+		}
 	</script>
 
 </body>
