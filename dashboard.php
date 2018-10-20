@@ -356,16 +356,6 @@ desired effect
 														}
 
 													echo '
-														<tr>
-															<td>
-																<li id="heatmap_test" style="width: 100%; list-style-type: none; display:inline-block;" data-hist="50">
-										
-																	<u>test location</u>
-																	<br>
-																	<small>test status</small>
-																</li>
-															</td>
-														</tr>
 														</tbody>
 													</table>
 													';
