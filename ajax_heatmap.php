@@ -13,7 +13,8 @@ session_start();
 include('inc/global_vars.php');
 include('inc/functions.php');
 
-$heatmap 					= build_heatmap_array($_SESSION['account']['id']);
+$site_id					= $_GET['site_id']
+$heatmap 					= build_heatmap_array($site_id);
 
 ?>
 
