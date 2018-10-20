@@ -451,7 +451,7 @@ desired effect
 		function load_heatmap()
 		{
 			console.log("Updating heatmap view");
-			$("#headmap_loader").html('<object data="ajax_heatmap.php">');
+			$("#headmap_loader").load('ajax_heatmap.php');
 		}
 	</script>
 
