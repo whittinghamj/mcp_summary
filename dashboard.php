@@ -16,9 +16,9 @@ include('inc/functions.php');
 $passcode 						= get('passcode');
 
 // reject login if passcode is empty
-if(empty($passcode))
+if(empty($_SESSION['account']['id']) && empty($passcode))
 {
-	// status_message('danger', 'Passcode cannot be empty.');
+	status_message('danger', 'Session timeout or passcode not specified.');
 	go($site['url'].'/index');
 }
 
