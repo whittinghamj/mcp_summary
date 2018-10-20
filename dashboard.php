@@ -482,6 +482,7 @@ desired effect
 	                </p>
 	            </div>
 
+	            <!--
 	            <div class="form-group">
 	                <label class="control-sidebar-subheading">
 	                    Temp:
@@ -491,6 +492,7 @@ desired effect
 	                    Average temperature across all online miners in this site.
 	                </p>
 	            </div>
+	        	-->
 	        </form>
 		</div>
       </aside>
