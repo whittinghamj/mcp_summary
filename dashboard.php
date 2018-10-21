@@ -304,7 +304,7 @@ desired effect
 								<div class="box-header with-border">
 									<h3 class="box-title">Heatmap</h3>
 								</div>
-								<div class="box-body text-center">
+								<div class="box-body">
 									<div id="headmap_loader">
 										Loading ...
 									</div>
