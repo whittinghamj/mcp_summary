@@ -3,6 +3,86 @@
 include('db.php');
 include('global_vars.php');
 
+function get_nicehash_balance($api_id, $api_key)
+{
+	$data = @file_get_contents('https://api.nicehash.com/api?method=balance&id='. $api_id . '&key=' . $api_key);
+	$data = json_decode($data, true);
+
+	if(is_array($data))
+	{
+		return $data;
+	}else{
+		return $data['status'] = 'error';
+	}
+}
+
+function show_twitter($username) 
+{
+ 	$no_of_tweets = 5;
+ 	$feed = "http://search.twitter.com/search.atom?q=from:" . $username . "&rpp=" . $no_of_tweets;
+ 	$xml = simplexml_load_file($feed);
+	foreach($xml->children() as $child) {
+		foreach ($child as $value) {
+			if($value->getName() == "link") $link = $value['href'];
+			if($value->getName() == "content") {
+				$content = $value . "";
+		echo '<p class="twit">'.$content.' <a class="twt" href="'.$link.'" title="">&nbsp; </a></p>';
+			}	
+		}
+	}	
+}
+
+function get_products()
+{
+	global $whmcs;
+
+	// lets get client details
+	$postfields["username"] 			= $whmcs['username'];
+	$postfields["password"] 			= $whmcs['password'];
+	$postfields["responsetype"] 		= "json";
+	$postfields["action"] 				= "GetProducts";
+	$postfields["gid"] 					= '19';
+	
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $whmcs['url']);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 100);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_SSLVERSION,3);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+	$data = curl_exec($ch);
+	curl_close($ch);
+
+	$data = json_decode($data, true);
+
+	return $data;
+}
+
+function address_to_gps($address)
+{
+	$address = urlencode($address);
+	$url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDpMWtXLvl-a6YsAAB2HBQvK-_c0_zDtXg&address=" . $address;
+	$bits = file_get_contents($url);
+	$bits = json_decode($bits, true);
+
+	$data['url']			= $url;
+	$data['lat'] 	= $bits['results'][0]['geometry']['location']['lat'];
+	$data['lng'] 	= $bits['results'][0]['geometry']['location']['lng'];
+
+	return $data;
+}
+
+function ip_to_gps()
+{
+	$client_ip 				= $_SERVER['REMOTE_ADDR'];
+	$bits 					= file_get_contents('http://api.ipstack.com/'.$client_ip.'?access_key=209136c920b48f85bf446ff732ddd3c2');
+	$bits 					= json_decode($bits, true);
+
+	return '';
+}
+
 function miner_performance($miner_id, $records)
 {
 	// 7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6
@@ -29,6 +109,49 @@ function miner_performance($miner_id, $records)
 	$data['powert'] 		= implode(', ', $power);
 
 	return $data;
+}
+
+function calc_day_to_month($value)
+{
+	$value = $value * 365 / 12;
+	return $value;
+}
+
+function get_weather($city, $country)
+{
+	$data_raw = file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$city.",".$country."&appid=ef00633adc161887ec1c6b55ee61d39f");
+	$data = json_decode($data_raw, true);
+	
+	$weather['icon'] 							= 'http://openweathermap.org/img/w/'.$data['weather'][0]['icon'].'.png';
+	$weather['text'] 							= $data['weather'][0]['main'];
+	$weather['temp']['c'] 						= k_to_c($data['main']['temp']);
+	$weather['temp']['f'] 						= k_to_f($data['main']['temp']);
+	$weather['wind']['speed'] 					= $data['wind']['speed'];
+	$weather['wind']['direction_degrees'] 		= $data['wind']['deg'];
+	
+	if($data['wind']['deg']>0){$weather['wind']['direction']='N';}
+	// if($data['wind']['deg']>22.5){$weather['wind']['direction']=='NNE';}
+	if($data['wind']['deg']>45){$weather['wind']['direction']='NE';}
+	// if($data['wind']['deg']>67.5){$weather['wind']['direction']=='ENE';}
+	if($data['wind']['deg']>90){$weather['wind']['direction']='E';}
+	// if($data['wind']['deg']>112.5){$weather['wind']['direction']=='ESE';}
+	if($data['wind']['deg']>135){$weather['wind']['direction']='SE';}
+	// if($data['wind']['deg']>157.5){$weather['wind']['direction']=='SSE';}
+	if($data['wind']['deg']>180){$weather['wind']['direction']='S';}
+	// if($data['wind']['deg']>202.5){$weather['wind']['direction']=='SSW';}
+	if($data['wind']['deg']>225){$weather['wind']['direction']='SW';}
+	// if($data['wind']['deg']>247.5){$weather['wind']['direction']=='WSW';}
+	if($data['wind']['deg']>270){$weather['wind']['direction']='W';}
+	// if($data['wind']['deg']>292.5){$weather['wind']['direction']=='WNW';}
+	if($data['wind']['deg']>315){$weather['wind']['direction']='NW';}
+	// if($data['wind']['deg']>237.5){$weather['wind']['direction']=='NNW';}
+	// if($data['wind']['deg']>270){$weather['wind']['direction']=='W';}
+	// if($data['wind']['deg']>270){$weather['wind']['direction']=='W';}
+	// if($data['wind']['deg']>270){$weather['wind']['direction']=='W';}
+	
+	$weather['all']						= $data;
+	
+	return $weather;
 }
 
 function k_to_f($temp)
@@ -87,6 +210,126 @@ function json_output($data)
 	$data 					= json_encode($data);
 	echo $data;
 	die();
+}
+
+function getsock($addr, $port)
+{
+	$socket = null;
+ 	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+ 	if ($socket === false || $socket === null)
+ 	{
+    	$error = socket_strerror(socket_last_error());
+    	$msg = "socket create(TCP) failed";
+    	echo "ERR: $msg '$error'\n";
+    	return null;
+ 	}
+
+ 	$res = socket_connect($socket, $addr, $port);
+ 	if ($res === false)
+ 	{
+    	$error = socket_strerror(socket_last_error());
+    	$msg = "socket connect($addr,$port) failed";
+    	echo "ERR: $msg '$error'\n";
+    	socket_close($socket);
+    	return null;
+ 	}
+ 	return $socket;
+}
+
+function readsockline($socket)
+{
+	$line = '';
+	while (true)
+	{
+    	$byte = socket_read($socket, 1);
+    	if ($byte === false || $byte === '')
+        	break;
+    	if ($byte === "\0")
+        	break;
+    	$line .= $byte;
+	}
+ 	return $line;
+}
+
+function request($ip, $cmd)
+{
+ $socket = getsock($ip, 4028);
+ if ($socket != null)
+ {
+    socket_write($socket, $cmd, strlen($cmd));
+    $line = readsockline($socket);
+    socket_close($socket);
+
+    if (strlen($line) == 0)
+    {
+        echo "WARN: '$cmd' returned nothing\n";
+        return $line;
+    }
+
+    // print "$cmd returned '$line'\n";
+
+    if (substr($line,0,1) == '{')
+        return json_decode($line, true);
+
+    $data = array();
+
+    $objs = explode('|', $line);
+    foreach ($objs as $obj)
+    {
+        if (strlen($obj) > 0)
+        {
+            $items = explode(',', $obj);
+            $item = $items[0];
+            $id = explode('=', $items[0], 2);
+            if (count($id) == 1 or !ctype_digit($id[1]))
+                $name = $id[0];
+            else
+                $name = $id[0].$id[1];
+
+            if (strlen($name) == 0)
+                $name = 'null';
+
+            if (isset($data[$name]))
+            {
+                $num = 1;
+                while (isset($data[$name.$num]))
+                    $num++;
+                $name .= $num;
+            }
+
+            $counter = 0;
+            foreach ($items as $item)
+            {
+                $id = explode('=', $item, 2);
+                if (count($id) == 2)
+                    $data[$name][$id[0]] = $id[1];
+                else
+                    $data[$name][$counter] = $id[0];
+
+                $counter++;
+            }
+        }
+    }
+
+    return $data;
+ }
+
+ return null;
+}
+
+function ping($host)
+{
+		exec(sprintf('ping -c 5 -W 5 %s', escapeshellarg($host)), $res, $rval);
+		return $rval === 0;
+}
+
+function cidr_to_range($cidr)
+{
+  	$range = array();
+  	$cidr = explode('/', $cidr);
+  	$range[0] = long2ip((ip2long($cidr[0])) & ((-1 << (32 - (int)$cidr[1]))));
+  	$range[1] = long2ip((ip2long($cidr[0])) + pow(2, (32 - (int)$cidr[1])) - 1);
+  	return $range;
 }
 
 function show_mining_calc()
