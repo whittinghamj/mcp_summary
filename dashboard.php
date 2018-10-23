@@ -15,13 +15,18 @@ include('inc/functions.php');
 
 $passcode 						= get('passcode');
 
-// reject login if passcode is empty
-if(empty($_SESSION['account']['id']) && empty($passcode))
-{
-	status_message('danger', 'Session timeout or passcode not specified.');
+// confirm passcode is not empty
+if(empty($passcode)){
+	status_message('danger', 'Passcode not specified.');
 	go($site['url'].'/index');
 }
 
+// reject login if passcode is empty
+if(empty($_SESSION['account']['id']))
+{
+	status_message('danger', 'Session timeout.');
+	go($site['url'].'/index');
+}
 
 $query = "SELECT `id` FROM `sites` WHERE `summary_passcode` = '".$passcode."' ";
 $result = mysql_query($query) or die(mysql_error());
