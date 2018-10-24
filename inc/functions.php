@@ -489,6 +489,9 @@ function post($key = null)
 	if ( is_string($post) ) {
 		$post = trim($post);
 	}
+
+	$post = mysqli_real_escape_string($post);
+
 	return $post;
 }
 
@@ -501,6 +504,9 @@ function get($key = null)
 	if ( is_string($get) ) {
 		$get = trim($get);
 	}
+
+	$get = mysqli_real_escape_string($get);
+
 	return $get;
 }
 
