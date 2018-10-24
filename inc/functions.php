@@ -455,6 +455,8 @@ function clean_string($value)
          $value = stripslashes( $value );
     }
 	// $value = str_replace('%','',$value);
+
+
     return mysql_real_escape_string($value);
 }
 
@@ -482,8 +484,6 @@ function url($url = '')
 
 function post($key = null)
 {
-	global $db;
-
 	if ( is_null($key) ) {
 		return $_POST;
 	}
@@ -494,15 +494,13 @@ function post($key = null)
 
 	$post = str_replace(array("'",'"','/','\''), '', $post);
 
-	$post = mysqli_real_escape_string($db, $post);
+	$post clean_string($post);
 
 	return $post;
 }
 
 function get($key = null)
 {
-	global $db;
-
 	if ( is_null($key) ) {
 		return $_GET;
 	}
@@ -512,9 +510,9 @@ function get($key = null)
 	}
 
 	$get = str_replace(array("'",'"','/','\''), '', $get);
-
-	$get = mysqli_real_escape_string($db, $get);
 	
+	$get clean_string($get);
+
 	return $get;
 }
 
