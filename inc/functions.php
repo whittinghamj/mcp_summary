@@ -482,6 +482,8 @@ function url($url = '')
 
 function post($key = null)
 {
+	global $db;
+
 	if ( is_null($key) ) {
 		return $_POST;
 	}
@@ -490,13 +492,17 @@ function post($key = null)
 		$post = trim($post);
 	}
 
-	$post = mysqli_real_escape_string($post);
+	$post = str_replace(array("'",'"','/','\''), '', $post);
+
+	$post = mysqli_real_escape_string($db, $post);
 
 	return $post;
 }
 
 function get($key = null)
 {
+	global $db;
+
 	if ( is_null($key) ) {
 		return $_GET;
 	}
@@ -505,8 +511,10 @@ function get($key = null)
 		$get = trim($get);
 	}
 
-	$get = mysqli_real_escape_string($get);
+	$get = str_replace(array("'",'"','/','\''), '', $get);
 
+	$get = mysqli_real_escape_string($db, $get);
+	
 	return $get;
 }
 
