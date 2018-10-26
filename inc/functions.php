@@ -494,7 +494,7 @@ function post($key = null)
 
 	$post = str_replace(array("'",'"','/','\''), '', $post);
 
-	$post clean_string($post);
+	$post = clean_string($post);
 
 	return $post;
 }
@@ -511,7 +511,7 @@ function get($key = null)
 
 	$get = str_replace(array("'",'"','/','\''), '', $get);
 	
-	$get clean_string($get);
+	$get = clean_string($get);
 
 	return $get;
 }
