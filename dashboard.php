@@ -366,7 +366,7 @@ desired effect
 	                    <span id="avg_power" class="pull-right"><?php echo $total_kilowatts; ?> kWs / <?php echo $total_amps; ?> AMPs</span>
 	                </label>
 	                <p>
-	                    Estimated power consumption based upon stock settings for each miner in this site.
+	                    Estimated power load based upon stock settings for each miner in this site.
 	                </p>
 	            </div>
 
